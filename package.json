@@ -1,0 +1,28 @@
+{
+  "name": "web-tracker",
+  "version": "1.0.0",
+  "description": "An application for tracking web requests.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dick-harper/web-tracker.git"
+  },
+  "keywords": [
+    "web",
+    "track",
+    "requests",
+    "log"
+  ],
+  "author": "R. Harper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dick-harper/web-tracker/issues"
+  },
+  "homepage": "https://github.com/dick-harper/web-tracker#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1"
+  }
+}
