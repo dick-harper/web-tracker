@@ -6,14 +6,14 @@ const port = process.env.PORT || 3000;
 const handler = (req, res) => {
   var now = new Date;
   console.log(`Server received request from host ${req}`);
-
-  figlet('Welcome to Web-Tracker!', function (err, data) {
+  var message = 'Welcome to Web-Tracker!';
+  figlet(message, function (err, data) {
     if (err) {
       console.log('Something went wrong...');
       console.dir(err);
       return;
     }
-    //console.log(data);
+    console.log(message);
     res.end(data);
     //res.end(`hello...${os.EOL}The time is ${now}${os.EOL}Client Address: ${req.connection.remoteAddress}${os.EOL}User Agent: ${req.headers['user-agent']}`);
   });
