@@ -2,26 +2,19 @@ const http = require('http');
 
 const port = process.env.PORT || 3000;
 
-const handler = function(req, res) {
+const handler = (req, res) => {
   var now = new Date;
-  //console.log('Server received request.');
+  console.log(`Server received request from host ${req}`);
 
-  res.end(`hello...the time is ${now}`);
+  res.end(`hello...the time is ${now}, host: ${req.headers['host']}, user agent: ${req.headers['user-agent']}`);
 };
 
-// const handler = (req, res) => {
-//   var now = new Date;
-//   //console.log('Server received request.');
-
-//   res.end(`hello...the time is ${now}`);
-// };
-
-const server = http.createServer(handler);
+const server = http.createServer(handler); //.listen(port);
 
 server.listen(port, err => {
   if (err) {
     console.log(err);
   } else {
-    //console.log(`Server listening on port ${port}`);
+    console.log(`Server listening on port ${port}`);
   }
 });
