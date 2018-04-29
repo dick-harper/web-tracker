@@ -4,7 +4,7 @@ const port = process.env.PORT || 3000;
 
 const handler = (req, res) => {
   var now = new Date;
-  console.log('Server received request.');
+  //console.log('Server received request.');
 
   res.end(`hello...the time is ${now}`);
 };
@@ -15,6 +15,6 @@ server.listen(port, err => {
   if (err) {
     console.log(err);
   } else {
-    console.log(`Server listening on port ${port}`);
+    //console.log(`Server listening on port ${port}`);
   }
 });
