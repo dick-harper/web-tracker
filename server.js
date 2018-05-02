@@ -7,11 +7,16 @@ const logger = require('./logger');
 const handler = (req, res) => {
   var now = new Date;
   console.log(`Server received request from host ${req}`);
-  
+
   var logData = [];
-  var message = 'Welcome to Web-Tracker!';
   
-  logData[0]= message;
+  var message = 'Welcome to Web-Tracker!';
+
+  var ip = req.headers['x-forwarded-for'] ;
+
+  logData.push(message);
+  logData.push(req.url);
+  logData.push(ip);
 
   figlet(message, function (err, data) {
     if (err) {
@@ -19,14 +24,14 @@ const handler = (req, res) => {
       console.dir(err);
       return;
     }
-    
+
     logger.log(logData);
-    
+
     res.end(data);
     //res.end(`hello...${os.EOL}The time is ${now}${os.EOL}Client Address: ${req.connection.remoteAddress}${os.EOL}User Agent: ${req.headers['user-agent']}`);
   });
 
-  
+
 };
 
 const server = http.createServer(handler); //.listen(port);
